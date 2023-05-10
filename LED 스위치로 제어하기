@@ -1,0 +1,24 @@
+int B = 8;
+int R = 13;
+int i = 0;
+
+void setup() {
+  pinMode(8,INPUT);     // 버튼 입력
+  pinMode(13,OUTPUT);   // LED 출력
+}
+
+void loop() {
+  if (digitalRead(B) == HIGH){  // 버튼 눌렀을 때
+    delay(300);
+    if (i == 0){    //i가 0이면
+      i = 1;        //1로 바꿈
+    } else if (i==1){
+      i = 0;
+    }
+  }
+  if (i==1){                //i가 1이면
+    digitalWrite(R,HIGH);   //LED를 켜기
+  } else if (i==0){         //i가 0이면
+    digitalWrite(R,LOW);    //끄기
+  }
+}
