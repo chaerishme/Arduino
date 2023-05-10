@@ -1,0 +1,19 @@
+int buzzerPin = 13;
+int buttonPin = 8;
+
+void setup()
+{
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop()
+{
+  if (digitalRead(buttonPin) == LOW) {
+    digitalWrite(buzzerPin, HIGH);
+    delay(300);
+  } else {
+    digitalWrite(buzzerPin, LOW);
+  }
+}
+
